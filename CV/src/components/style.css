@@ -1,0 +1,42 @@
+body,
+fieldset {
+  margin: 0;
+  padding: 0;
+}
+
+fieldset {
+  width: 300px;
+}
+
+.general-inputs,
+.education-inputs,
+.experience-inputs,
+.others-input {
+  display: flex;
+  flex-direction: column;
+  width: 200px;
+}
+
+.buttons-wrapper {
+  display: flex;
+  gap: 5px;
+}
+
+button {
+  cursor: pointer;
+}
+
+.clear-button,
+.add-button,
+.return-button {
+  background: none;
+  border: none;
+  padding: 0;
+}
+
+.clear-button > svg,
+.add-button > svg,
+.return-button > svg {
+  width: 20px;
+  height: 20px;
+}
