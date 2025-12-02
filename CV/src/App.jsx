@@ -1,45 +1,29 @@
 import { StrictMode, useState } from 'react';
-import './App.css';
 import GeneralForm from './components/general-form';
 import EducationalForm from './components/educational-form';
 import OthersForm from './components/others-form';
 import Preview from './components/preview-form';
 import ExperienceForm from './components/experience-form';
+import {
+  INITIAL_GENERAL,
+  INITIAL_EDUCATION,
+  INITIAL_EXPERIENCE,
+  INITIAL_OTHERS,
+} from './modules/constants.js';
+
 function App() {
-  const [generalInfo, setGeneralInfo] = useState({
-    name: '',
-    email: '',
-    phone: '',
-    location: '',
-    about: '',
-  });
-  const [educationalInfo, setEducationalInfo] = useState({
-    school: '',
-    university: '',
-    specialization: '',
-    degree: '',
-    completion: '',
-  });
-
-  const [experienceInfo, setExperienceInfo] = useState({
-    corporation: '',
-    position: '',
-    responsibilities: '',
-    start: '',
-    end: '',
-  });
-
-  const [othersInfo, setOthersInfo] = useState({
-    skills: [],
-    languages: [],
-  });
-
+  const [generalInfo, setGeneralInfo] = useState(INITIAL_GENERAL);
+  const [educationalInfo, setEducationalInfo] = useState(INITIAL_EDUCATION);
+  const [experienceInfo, setExperienceInfo] = useState(INITIAL_EXPERIENCE);
+  const [othersInfo, setOthersInfo] = useState(INITIAL_OTHERS);
   return (
     <StrictMode>
-      <GeneralForm data={generalInfo} onChange={setGeneralInfo} />
-      <EducationalForm data={educationalInfo} onChange={setEducationalInfo} />
-      <ExperienceForm data={experienceInfo} onChange={setExperienceInfo} />
-      <OthersForm onChange={setOthersInfo} />
+      <div className="display-column">
+        <GeneralForm data={generalInfo} onChange={setGeneralInfo} />
+        <EducationalForm data={educationalInfo} onChange={setEducationalInfo} />
+        <ExperienceForm data={experienceInfo} onChange={setExperienceInfo} />
+        <OthersForm data={othersInfo} onChange={setOthersInfo} />
+      </div>
       <Preview
         general={generalInfo}
         education={educationalInfo}

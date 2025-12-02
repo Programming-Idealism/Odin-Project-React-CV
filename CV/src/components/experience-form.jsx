@@ -1,5 +1,8 @@
 import { useState } from 'react';
 import './style.css';
+import DeleteButton from './delete-button';
+import { INITIAL_EXPERIENCE } from '../modules/constants';
+import EditToggleButton from './toggle-button';
 
 export default function ExperienceForm({ data, onChange }) {
   const [isEditing, setIsEditing] = useState(true);
@@ -16,20 +19,11 @@ export default function ExperienceForm({ data, onChange }) {
     }));
   };
 
-  const handleClear = () => {
-    onChange({
-      corporation: '',
-      position: '',
-      start: '',
-      end: '',
-      responsibilities: '',
-    });
-  };
   return (
     <>
       <form action="">
         <div className="experience-form">
-          <fieldset disabled={!isEditing}>
+          <fieldset>
             <div className="experience-inputs">
               <label htmlFor="corporation" className="input-description">
                 Corporation:
@@ -40,6 +34,7 @@ export default function ExperienceForm({ data, onChange }) {
                 name="corporation"
                 value={data.corporation}
                 onChange={handleInput}
+                disabled={!isEditing}
               />
               <label htmlFor="position" className="input-description">
                 Position:
@@ -50,9 +45,10 @@ export default function ExperienceForm({ data, onChange }) {
                 name="position"
                 value={data.position}
                 onChange={handleInput}
+                disabled={!isEditing}
               />
               <label htmlFor="start" className="input-description">
-                Starting Date:
+                Starting Year:
               </label>
               <input
                 type="text"
@@ -60,9 +56,10 @@ export default function ExperienceForm({ data, onChange }) {
                 name="start"
                 value={data.start}
                 onChange={handleInput}
+                disabled={!isEditing}
               />
               <label htmlFor="end" className="input-description">
-                Ending Date:
+                Ending Year:
               </label>
               <input
                 type="text"
@@ -70,6 +67,7 @@ export default function ExperienceForm({ data, onChange }) {
                 name="end"
                 value={data.end}
                 onChange={handleInput}
+                disabled={!isEditing}
               />
               <label htmlFor="responsibilities" className="input-description">
                 Responsibilities:
@@ -79,24 +77,17 @@ export default function ExperienceForm({ data, onChange }) {
                 name="responsibilities"
                 value={data.responsibilities}
                 onChange={handleInput}
+                disabled={!isEditing}
               />
             </div>
+            <div className="buttons-wrapper">
+              <DeleteButton
+                onChange={onChange}
+                resetState={INITIAL_EXPERIENCE}
+              />
+              <EditToggleButton isEditing={isEditing} onToggle={toggleEdit} />
+            </div>
           </fieldset>
-          <div className="buttons-wrapper">
-            <button type="button" className="clear-button">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 24 24"
-                onClick={handleClear}
-              >
-                <title>Delete</title>
-                <path d="M18,19C18,20.66 16.66,22 15,22H8C6.34,22 5,20.66 5,19V7H4V4H8.5L9.5,3H13.5L14.5,4H19V7H18V19M6,7V19C6,20.1 6.9,21 8,21H15C16.1,21 17,20.1 17,19V7H6M18,6V5H14L13,4H10L9,5H5V6H18M8,9H9V19H8V9M14,9H15V19H14V9Z" />
-              </svg>
-            </button>
-            <button type="button" onClick={toggleEdit}>
-              {isEditing ? 'Save' : 'Edit'}
-            </button>
-          </div>
         </div>
       </form>
     </>

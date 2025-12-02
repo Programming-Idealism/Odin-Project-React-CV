@@ -1,3 +1,7 @@
+#root {
+  display: flex;
+}
+
 body,
 fieldset {
   margin: 0;
@@ -14,7 +18,7 @@ fieldset {
 .others-input {
   display: flex;
   flex-direction: column;
-  width: 200px;
+  width: 250px;
 }
 
 .buttons-wrapper {
@@ -34,9 +38,30 @@ button {
   padding: 0;
 }
 
+.elements-wrapper {
+  display: flex;
+  align-items: center;
+  flex: 3;
+}
+
 .clear-button > svg,
 .add-button > svg,
 .return-button > svg {
   width: 20px;
   height: 20px;
+}
+
+.append-wrapper {
+  width: 350px;
+  display: flex;
+  align-items: center;
+  gap: 3px;
+}
+
+.add-button {
+  flex: 0 0 24px;
+}
+
+.input-description {
+  flex: 1;
 }

@@ -2,7 +2,7 @@ import './style.css';
 
 export default function Preview({ general, education, experience, others }) {
   return (
-    <div>
+    <div className="preview">
       <div className="general-info">
         <h1>{general.name}</h1>
         <h2>{general.email}</h2>
@@ -19,7 +19,6 @@ export default function Preview({ general, education, experience, others }) {
       </div>
       <h3>{experience.corporation}</h3>
       <h4>{experience.position}</h4>
-      <h4>{experience.responsibilities}</h4>
       {experience.start && (
         <p className="experience-duration">
           {experience.end
@@ -27,6 +26,7 @@ export default function Preview({ general, education, experience, others }) {
             : `${experience.start} - present`}
         </p>
       )}
+      <h4>{experience.responsibilities}</h4>
       <ol className="skills-info">
         {others.skills.map((skill, index) => (
           <li key={index}>{skill}</li>
