@@ -1,5 +1,19 @@
+:root {
+  --main-font: Wotfard, sans-serif, Arial;
+}
+
+html,
+body {
+  font-family: var(--main-font);
+}
+
+* {
+  font-family: inherit;
+}
+
 #root {
   display: flex;
+  background-color: #030512;
 }
 
 body,
@@ -8,8 +22,15 @@ fieldset {
   padding: 0;
 }
 
+.display-column {
+  margin: 20px 100px;
+}
+
 fieldset {
-  width: 300px;
+  width: 100px;
+  padding: 5px 10px;
+  margin: 20px;
+  border-radius: 15px 25px;
 }
 
 .general-inputs,
@@ -18,12 +39,25 @@ fieldset {
 .others-input {
   display: flex;
   flex-direction: column;
-  width: 250px;
+  width: 300px;
+}
+
+textarea {
+  resize: vertical;
+  background-color: hsl(217, 40%, 30%);
+  color: white;
+}
+
+input {
+  background-color: hsl(217, 40%, 30%);
+  color: white;
 }
 
 .buttons-wrapper {
   display: flex;
+  justify-content: end;
   gap: 5px;
+  margin-top: 10px;
 }
 
 button {
@@ -49,6 +83,7 @@ button {
 .return-button > svg {
   width: 20px;
   height: 20px;
+  fill: white;
 }
 
 .append-wrapper {
@@ -64,4 +99,132 @@ button {
 
 .input-description {
   flex: 1;
+  color: whitesmoke;
+  margin: 10px 0;
+  font-weight: bold;
+}
+
+.preview {
+  display: flex;
+  gap: 20px;
+  border: 1px solid white;
+  background-color: white;
+  filter: brightness(93%);
+  width: 55vw;
+  height: fit-content;
+  margin-top: 2.6rem;
+  border-radius: 10px 60px;
+  position: sticky;
+  padding: 20px 0 20px 35px;
+}
+
+.details-left-side {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  background-color: hsl(16, 100%, 95%);
+  filter: grayscale(80%);
+  padding-top: 10px;
+}
+
+.details-right-side {
+  flex: 4;
+}
+
+#profile-name {
+  display: block;
+  text-align: right;
+  margin-right: 80px;
+  font-size: 2.2rem;
+  font-weight: bold;
+  font-family: roboto;
+  text-shadow: 0px 0px 2px blue;
+}
+
+.skills-info,
+.languages-info {
+  list-style-position: inside;
+  margin: 0;
+  padding: 0 0 0 5px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.skill-details,
+.language-details {
+  font-size: 1rem;
+}
+
+.main-header {
+  font-size: 1.3rem;
+}
+
+.secondary-header {
+  font-size: 1rem;
+  font-weight: normal;
+}
+
+.others-line {
+  display: inline-block;
+  font-size: 1.1rem;
+  margin-bottom: 7px;
+  margin-left: 5px;
+  text-decoration: underline;
+}
+
+.others-wrapper {
+  margin-top: 15px;
+}
+
+.others-row {
+  display: flex;
+  align-items: center;
+  margin: 0 0 10px 0;
+}
+
+.profile-wrapper,
+.education-wrapper,
+.experience-wrapper,
+.others-wrapper {
+  width: 92%;
+}
+
+.experience-duration {
+  display: inline;
+}
+
+hr {
+  width: 100%;
+}
+
+.personal-details {
+  font-size: 0.9rem;
+}
+
+.dotted-line {
+  margin-top: 5px;
+  border-top: 1px dotted black;
+}
+
+.details {
+  font-size: 0.8rem;
+  word-break: break-all;
+}
+
+.icon {
+  width: 17px;
+}
+
+.section {
+  display: flex;
+  margin: 7px 0 0 3px;
+  gap: 2px;
+  align-items: center;
+}
+
+svg {
+  width: 20px;
+  height: 20px;
 }

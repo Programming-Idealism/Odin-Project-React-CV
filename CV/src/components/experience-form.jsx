@@ -57,6 +57,7 @@ export default function ExperienceForm({ data, onChange }) {
                 value={data.start}
                 onChange={handleInput}
                 disabled={!isEditing}
+                maxLength={4}
               />
               <label htmlFor="end" className="input-description">
                 Ending Year:
@@ -68,6 +69,7 @@ export default function ExperienceForm({ data, onChange }) {
                 value={data.end}
                 onChange={handleInput}
                 disabled={!isEditing}
+                maxLength={4}
               />
               <label htmlFor="responsibilities" className="input-description">
                 Responsibilities:
