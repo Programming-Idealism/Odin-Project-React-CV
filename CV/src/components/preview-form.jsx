@@ -84,16 +84,17 @@ export default function Preview({ general, education, experience, others }) {
               {general.name}
             </span>
           )}
-
           <hr style={{ marginTop: '20px' }} />
-          <h1 className="main-header">Profile:</h1>
+          <h1 className="main-header">Profile</h1>
+          <span className="matching-semicolons">:</span>
           <p>
             About Me: <span className="details">{general.about}</span>
           </p>
         </div>
         <div className="education-wrapper">
           <hr />
-          <h1 className="main-header">Education:</h1>
+          <h1 className="main-header">Education</h1>
+          <span className="matching-semicolons">:</span>
           <h2 className="secondary-header">
             School: <span className="details">{education.school}</span>
           </h2>
@@ -114,7 +115,8 @@ export default function Preview({ general, education, experience, others }) {
         </div>
         <div className="experience-wrapper">
           <hr />
-          <h1 className="main-header">Employment History:</h1>
+          <h1 className="main-header">Employment History</h1>
+          <span className="matching-semicolons">:</span>
           <h2 className="secondary-header">
             Corporation:{' '}
             <span className="details">{experience.corporation}</span>
